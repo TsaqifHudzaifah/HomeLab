@@ -51,7 +51,6 @@ graph TD
 | **`PC01`** | Windows 11 Enterprise | Corporate Workstation (Domain-Joined Endpoint) | DHCP / Static |
 
 * **Domain Configuration:** Established domain forest (`corp.local`) on `DC01`, providing centralized authentication, group policies, and identity management.
-* **Workstation Enrollment:** Bypassed Microsoft Cloud OOBE on `PC01`, provisioned a local administrative baseline, and joined the machine to the Active Directory domain.
 * **Telemetry & Sensor Layer:**
   * Deployed **Microsoft Sysmon (System Monitor)** across both `DC01` and `PC01`.
   * Applied the industry-standard **SwiftOnSecurity Sysmon Configuration** (`sysmonconfig-export.xml`) to eliminate background operating system noise while actively tracking:
