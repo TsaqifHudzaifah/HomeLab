@@ -4,7 +4,7 @@ Custom SIEM lab built with Wazuh, Windows Server, and Kali Linux for hands-on se
 ```mermaid
 graph TD
     subgraph Outside ["Outside / Untrusted Network (VMware NAT)"]
-        Attacker["🥷 Kali Linux<br/>(Attacker VM)"]
+        Attacker["Kali Linux<br/>(Attacker VM)"]
     end
 
     subgraph Boundary ["Isolation Boundary"]
@@ -12,9 +12,9 @@ graph TD
     end
 
     subgraph Inside ["Corporate LAN Segment (Corp-Network)"]
-        PC01["💻 Windows 11 Enterprise<br/>(PC01 Endpoint)"]
-        DC01["🗄️ Windows Server 2022<br/>(DC01 Domain Controller)"]
-        SIEM["🧠 Ubuntu Server 24.04<br/>(Wazuh SIEM / Port 1514)"]
+        PC01["Windows 11 Enterprise<br/>(PC01 Endpoint)"]
+        DC01["Windows Server 2022<br/>(DC01 Domain Controller)"]
+        SIEM["Ubuntu Server 24.04<br/>(Wazuh SIEM / Port 1514)"]
 
         PC01 -->|Telemetry / Sysmon| SIEM
         DC01 -->|Telemetry / Sysmon| SIEM
