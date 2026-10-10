@@ -25,6 +25,7 @@ graph TD
     Attacker -->|Simulated Attacks| Boundary
     Boundary --> PC01
     Boundary --> DC01
+```
 ### 1. Hardware & Virtualization Layer
 - **Host Machine:** HP OMEN 16 (64GB RAM, Intel i7 Gen 14th).
 - **Hypervisor:** VMware Workstation Pro.
