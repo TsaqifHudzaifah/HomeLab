@@ -32,9 +32,7 @@ graph TD
 
 ---
 
-## 🏗️ Lab Infrastructure & Architecture
-
-### 1. Hardware & Virtualization Layer
+## Hardware & Virtualization Layer
 * **Host Machine:** HP OMEN 16 Laptop
   * **Memory:** 64 GB DDR5 RAM
   * **Processor:** Intel Core i7 (14th Gen)
@@ -45,7 +43,7 @@ graph TD
 
 ---
 
-### 2. The "Victim" Network (Active Directory Domain)
+## The "Victim" Network (Active Directory Domain)
 
 | Machine Hostname | Operating System | Role / Purpose | IP Assignment |
 | :--- | :--- | :--- | :--- |
@@ -63,7 +61,7 @@ graph TD
 
 ---
 
-### 3. Security Operations Center (SOC) Infrastructure
+## Security Operations Center (SOC) Infrastructure
 
 ```mermaid
 graph LR
@@ -82,12 +80,4 @@ graph LR
   * **Wazuh Dashboard:** Centralized analyst interface for real-time threat hunting.
 * **Telemetry Pipeline & Custom Data Ingestion:**
   * Deployed **Wazuh Windows Agents** on all endpoints.
-  * Customized agent configurations (`ossec.conf`) to bridge raw Sysmon events directly into the SIEM pipeline via the Windows EventChannel API:
-
-```xml
-<!-- Custom Sysmon EventChannel Subscription -->
-<localfile>
-  <location>Microsoft-Windows-Sysmon/Operational</location>
-  <log_format>eventchannel</log_format>
-</localfile>
-```
+  * Customized agent configurations (`ossec.conf`) to bridge raw Sysmon events directly into the SIEM pipeline via the Windows EventChannel API
