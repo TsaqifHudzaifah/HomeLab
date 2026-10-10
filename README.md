@@ -65,13 +65,13 @@ graph TD
 
 ### 3. Security Operations Center (SOC) Infrastructure
 
-```text
-[ Windows Endpoints ] --(Sysmon EventChannel)--> [ Wazuh Agent ] 
-                                                        │
-                                          Encrypted TCP/1514
-                                                        ▼
-                                             [ Wazuh Manager ]
-                                          (Ubuntu Server 24.04)
+```mermaid
+graph LR
+    subgraph Windows Environment
+        Win["💻 Windows Endpoints<br/>(PC01 & DC01)"] -- "Sysmon EventChannel" --> Agent["⚙️ Wazuh Agent"]
+    end
+    
+    Agent -- "Encrypted TCP/1514" --> SIEM["🧠 Wazuh Manager<br/>(Ubuntu Server 24.04)"]
 ```
 
 * **SIEM Platform:** **Wazuh (Open-Source SIEM / XDR)**
